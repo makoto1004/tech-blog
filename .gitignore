@@ -1,0 +1,14 @@
+# Terraform が自動で作るもの（大きい・パソコンごとにちがう）
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# バケット名など、公開しないもの
+backend.hcl
+*.tfvars
+
+# Hugo が作るページ（元の Markdown から何度でも作り直せる）
+public/
+resources/_gen/
+.hugo_build.lock

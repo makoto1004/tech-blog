@@ -1,0 +1,8 @@
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <p class="date">{{ .Date.Format "2006-01-02" }}{{ if ne .Lastmod .Date }}（更新 {{ .Lastmod.Format "2006-01-02" }}）{{ end }}</p>
+  {{ .Content }}
+</article>
+<p><a href="{{ site.Home.RelPermalink }}">← 記事の一覧へ</a></p>
+{{ end }}

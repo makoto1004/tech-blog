@@ -1,0 +1,14 @@
+{{ define "main" }}
+<p>{{ site.Params.description }}</p>
+<h2>記事</h2>
+<ul class="posts">
+  {{ range where site.RegularPages "Section" "posts" }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
+    <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+  </li>
+  {{ else }}
+  <li>まだ記事はありません。</li>
+  {{ end }}
+</ul>
+{{ end }}

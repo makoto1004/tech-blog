@@ -1,0 +1,16 @@
+# 技術ブログの設定
+baseURL = 'https://d3jjg8xe1sjrq9.cloudfront.net/'
+locale = 'ja-jp'
+title = 'POSとAWSの障害対応ノート'
+
+# 日本語の要約の長さを正しく数える
+hasCJKLanguage = true
+
+# タグの一覧と RSS は、まだ使わない
+disableKinds = ['taxonomy', 'term', 'rss']
+
+[params]
+  description = 'POS レジのヘルプデスクから、社内SE・クラウド運用を目指す人の技術メモ。AWS・Terraform・障害対応の記録。'
+
+[markup.goldmark.renderer]
+  unsafe = false # Markdown の中の HTML は出さない（安全のため）

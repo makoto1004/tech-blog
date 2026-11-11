@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else if eq .Kind "404" }}ページが見つかりません｜{{ site.Title }}{{ else }}{{ .Title }}｜{{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <style>
+    :root { --text:#1f2933; --sub:#5f6b7a; --line:#d9dee5; --accent:#1d4e89; --bg:#ffffff; --code:#f3f5f8; }
+    @media (prefers-color-scheme: dark) {
+      :root { --text:#e6e9ee; --sub:#a3acb9; --line:#323a46; --accent:#8bb8f0; --bg:#14181f; --code:#1d232c; }
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text);
+      font-family: "Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif; line-height:1.85; }
+    .wrap { max-width:760px; margin:0 auto; padding:0 16px; }
+    header { border-bottom:1px solid var(--line); }
+    header a { color:var(--text); text-decoration:none; font-weight:700; }
+    header .wrap { padding:18px 16px; }
+    main { padding:24px 0 48px; }
+    a { color:var(--accent); }
+    h1 { font-size:1.6rem; line-height:1.4; }
+    h2 { font-size:1.3rem; margin-top:2.2em; border-bottom:1px solid var(--line); padding-bottom:.2em; }
+    .date { color:var(--sub); font-size:.9rem; }
+    ul.posts { list-style:none; padding:0; }
+    ul.posts li { padding:14px 0; border-bottom:1px solid var(--line); }
+    pre, code { background:var(--code); border-radius:6px; }
+    pre { padding:12px; overflow-x:auto; }
+    code { padding:.1em .3em; }
+    pre code { padding:0; }
+    table { border-collapse:collapse; width:100%; display:block; overflow-x:auto; }
+    th, td { border:1px solid var(--line); padding:6px 10px; }
+    img { max-width:100%; height:auto; }
+    footer { border-top:1px solid var(--line); color:var(--sub); font-size:.85rem; }
+    footer .wrap { padding:18px 16px; }
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a></div></header>
+  <main><div class="wrap">{{ block "main" . }}{{ end }}</div></main>
+  <footer><div class="wrap">© {{ now.Year }} {{ site.Title }}／S3 + CloudFront（Terraform）で配信しています</div></footer>
+</body>
+</html>
