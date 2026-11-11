@@ -14,3 +14,4 @@ disableKinds = ['taxonomy', 'term', 'rss']
 
 [markup.goldmark.renderer]
   unsafe = false # Markdown の中の HTML は出さない（安全のため）
+  hardWraps = true # 1 文ごとの改行を、ページでも改行として見せる
